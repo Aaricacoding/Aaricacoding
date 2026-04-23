@@ -92,7 +92,6 @@ const aarica = {
 graph LR
     A[🎓 BCA Student] --> B[🤖 ML/AI]
     A --> C[🎨 3D Animation]
-    A --> D[⚡ Vibe Coding]
     B --> E[BERT & NLP]
     B --> F[MLOps]
     C --> G[Three.js]
