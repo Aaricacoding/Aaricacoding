@@ -2,7 +2,7 @@
 
 # 🌊 Hey, I'm Aarica
 
-### BCA Student • ML Explorer • Vibe Coder • 3D Animation Enthusiast
+### BCA Student • ML Explorer • 3D Animation Enthusiast
 
 *Where data meets design, and code becomes art*
 
@@ -18,7 +18,7 @@
 ```typescript
 const aarica = {
     status: "BCA Student @ Learning Everything Mode 🚀",
-    vibe: "Coding + Design + ML = ✨",
+    skills: "Coding + Design + ML = ✨",
     currentFocus: [
         "Building ML pipelines that actually work",
         "Making data visualizations that don't look boring",
