@@ -1,0 +1,142 @@
+<svg viewBox="0 0 860 280" width="860" height="280" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code','Courier New',monospace">
+  <defs>
+    <style>
+      .bg { fill: #020617; }
+      .ring { fill: none; stroke: #1E1058; stroke-width: 1; stroke-dasharray: 4 4; }
+      .ring2 { fill: none; stroke: #0C1445; stroke-width: 1; stroke-dasharray: 3 6; }
+      .core { fill: #1E1058; stroke: #7C3AED; stroke-width: 2; }
+      .core-txt { fill: #F5F3FF; font-size: 11px; font-weight: 700; text-anchor: middle; }
+      .core-sub { fill: #A78BFA; font-size: 8px; text-anchor: middle; }
+      .badge { fill: #0C1445; stroke: #4C0F8F; stroke-width: 1; }
+      .badge-hot { fill: #1E1058; stroke: #A78BFA; stroke-width: 1.5; }
+      .badge-txt { fill: #DDD6FE; font-size: 9px; font-weight: 700; text-anchor: middle; }
+      .badge-icon { font-size: 13px; text-anchor: middle; }
+      .title { fill: #F5F3FF; font-size: 13px; font-weight: 700; text-anchor: middle; }
+      .sec { fill: #4C0F8F; font-size: 9px; letter-spacing: 2px; text-anchor: middle; }
+      .connector { stroke: #4C0F8F; stroke-width: 1; fill: none; stroke-dasharray: 3 3; opacity: 0.5; }
+
+      /* orbit rotations */
+      .orbit1 { animation: spin1 18s linear infinite; transform-origin: 430px 155px; }
+      .orbit2 { animation: spin2 28s linear infinite; transform-origin: 430px 155px; }
+      .orbit3 { animation: spin3 38s linear infinite reverse; transform-origin: 430px 155px; }
+
+      @keyframes spin1 { to { transform: rotate(360deg); } }
+      @keyframes spin2 { to { transform: rotate(360deg); } }
+      @keyframes spin3 { to { transform: rotate(360deg); } }
+
+      /* core pulse */
+      .pulse-ring { fill: none; stroke: #7C3AED; stroke-width: 1.5; opacity: 0; animation: pulseOut 2.4s ease-out infinite; transform-origin: 430px 155px; }
+      .pulse-ring2 { fill: none; stroke: #4C0F8F; stroke-width: 1; opacity: 0; animation: pulseOut 2.4s ease-out 1.2s infinite; transform-origin: 430px 155px; }
+      @keyframes pulseOut { 0% { r: 36px; opacity: 0.8; } 100% { r: 58px; opacity: 0; } }
+
+      /* twinkle dots on rings */
+      .dot { fill: #7C3AED; opacity: 0.4; animation: twinkle 2s ease-in-out infinite; }
+      .dot2 { fill: #A78BFA; opacity: 0.3; animation: twinkle 3s ease-in-out 1s infinite; }
+      @keyframes twinkle { 0%,100%{opacity:0.2} 50%{opacity:0.9} }
+    </style>
+  </defs>
+
+  <rect width="860" height="280" rx="12" class="bg" stroke="#0C1445" stroke-width="1"/>
+
+  <!-- title -->
+  <text x="430" y="22" class="sec">// TECH ORBIT</text>
+  <text x="430" y="42" class="title">AI/ML Stack — Aarica Raj</text>
+
+  <!-- rings (static, decorative) -->
+  <circle cx="430" cy="155" r="56" class="ring"/>
+  <circle cx="430" cy="155" r="100" class="ring2"/>
+  <circle cx="430" cy="155" r="148" class="ring"/>
+
+  <!-- pulse rings on core -->
+  <circle cx="430" cy="155" r="36" class="pulse-ring"/>
+  <circle cx="430" cy="155" r="36" class="pulse-ring2"/>
+
+  <!-- CORE -->
+  <circle cx="430" cy="155" r="38" class="core"/>
+  <text x="430" y="151" class="core-txt">Aarica</text>
+  <text x="430" y="163" class="core-txt">Raj</text>
+  <text x="430" y="175" class="core-sub">AI/ML Dev</text>
+
+  <!-- INNER ORBIT — 4 nodes at 100px radius -->
+  <g class="orbit1">
+    <!-- Python @ 0° -->
+    <rect x="476" y="132" width="52" height="36" rx="6" class="badge-hot"/>
+    <text x="502" y="147" class="badge-icon">🐍</text>
+    <text x="502" y="162" class="badge-txt">Python</text>
+
+    <!-- PyTorch @ 90° -->
+    <rect x="407" y="201" width="52" height="36" rx="6" class="badge-hot"/>
+    <text x="433" y="216" class="badge-icon">🔥</text>
+    <text x="433" y="231" class="badge-txt">PyTorch</text>
+
+    <!-- FAISS @ 180° -->
+    <rect x="332" y="132" width="52" height="36" rx="6" class="badge-hot"/>
+    <text x="358" y="147" class="badge-icon">🗃️</text>
+    <text x="358" y="162" class="badge-txt">FAISS</text>
+
+    <!-- HuggingFace @ 270° -->
+    <rect x="407" y="63" width="52" height="36" rx="6" class="badge-hot"/>
+    <text x="433" y="78" class="badge-icon">🤗</text>
+    <text x="433" y="93" class="badge-txt">HuggingFace</text>
+  </g>
+
+  <!-- MIDDLE ORBIT — 6 nodes at 148px radius -->
+  <g class="orbit2">
+    <!-- LangChain @ 30° -->
+    <rect x="541" y="91" width="56" height="32" rx="6" class="badge"/>
+    <text x="569" y="111" class="badge-txt">🔗 LangChain</text>
+
+    <!-- Groq @ 90° -->
+    <rect x="552" y="140" width="56" height="32" rx="6" class="badge"/>
+    <text x="580" y="160" class="badge-txt">⚡ Groq API</text>
+
+    <!-- Docker @ 150° -->
+    <rect x="468" y="222" width="56" height="32" rx="6" class="badge"/>
+    <text x="496" y="242" class="badge-txt">🐳 Docker</text>
+
+    <!-- Flask @ 210° -->
+    <rect x="330" y="222" width="56" height="32" rx="6" class="badge"/>
+    <text x="358" y="242" class="badge-txt">🌐 Flask</text>
+
+    <!-- Azure @ 270° -->
+    <rect x="247" y="140" width="56" height="32" rx="6" class="badge"/>
+    <text x="275" y="160" class="badge-txt">☁️ Azure AI</text>
+
+    <!-- Transformers @ 330° -->
+    <rect x="265" y="91" width="72" height="32" rx="6" class="badge"/>
+    <text x="301" y="111" class="badge-txt">🔄 Transformers</text>
+  </g>
+
+  <!-- OUTER ORBIT — 8 nodes at 210px radius (corner labels only) -->
+  <g class="orbit3">
+    <rect x="618" y="62" width="60" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="648" y="80" class="badge-txt" style="fill:#4C0F8F">BERT/RoBERTa</text>
+
+    <rect x="668" y="130" width="48" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="692" y="148" class="badge-txt" style="fill:#4C0F8F">Scikit-learn</text>
+
+    <rect x="580" y="214" width="44" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="602" y="232" class="badge-txt" style="fill:#4C0F8F">Gradio</text>
+
+    <rect x="430" y="248" width="44" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="452" y="266" class="badge-txt" style="fill:#4C0F8F">MySQL</text>
+
+    <rect x="274" y="214" width="44" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="296" y="232" class="badge-txt" style="fill:#4C0F8F">REST API</text>
+
+    <rect x="152" y="130" width="56" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="180" y="148" class="badge-txt" style="fill:#4C0F8F">Gemini API</text>
+
+    <rect x="165" y="62" width="44" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="187" y="80" class="badge-txt" style="fill:#4C0F8F">NumPy</text>
+
+    <rect x="295" y="22" width="52" height="28" rx="5" fill="#050b1a" stroke="#1E1058" stroke-width="1"/>
+    <text x="321" y="40" class="badge-txt" style="fill:#4C0F8F">Pandas</text>
+  </g>
+
+  <!-- twinkle dots scattered on rings -->
+  <circle cx="430" cy="55" r="2.5" class="dot"/>
+  <circle cx="578" cy="155" r="2" class="dot2"/>
+  <circle cx="282" cy="155" r="2" class="dot"/>
+  <circle cx="430" cy="255" r="2.5" class="dot2"/>
+</svg>

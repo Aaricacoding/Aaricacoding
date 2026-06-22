@@ -1,0 +1,78 @@
+<svg viewBox="0 0 860 90" width="860" height="90" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code','Courier New',monospace">
+  <defs>
+    <style>
+      .bg{fill:#020617;}
+      .btn{fill:#0C1445;stroke:#4C0F8F;stroke-width:1;}
+      .btn-hot{fill:#1E1058;stroke:#A78BFA;stroke-width:1.5;}
+      .btn-txt{fill:#DDD6FE;font-size:10px;font-weight:700;text-anchor:middle;}
+      .btn-icon{font-size:14px;text-anchor:middle;}
+      .btn-sub{fill:#7C3AED;font-size:8px;text-anchor:middle;}
+      .title{fill:#A78BFA;font-size:10px;letter-spacing:2px;text-anchor:middle;}
+
+      /* hover shimmer — each btn shimmers on stagger */
+      @keyframes shimmer{0%,100%{stroke:#4C0F8F;}50%{stroke:#A78BFA;fill:#1E1058;}}
+      .b1{animation:shimmer 3s ease-in-out 0s infinite;}
+      .b2{animation:shimmer 3s ease-in-out 0.5s infinite;}
+      .b3{animation:shimmer 3s ease-in-out 1.0s infinite;}
+      .b4{animation:shimmer 3s ease-in-out 1.5s infinite;}
+      .b5{animation:shimmer 3s ease-in-out 2.0s infinite;}
+
+      /* slide in */
+      .sl{opacity:0;animation:slideIn 0.5s ease forwards;}
+      .sl1{animation-delay:0.1s;}
+      .sl2{animation-delay:0.25s;}
+      .sl3{animation-delay:0.4s;}
+      .sl4{animation-delay:0.55s;}
+      .sl5{animation-delay:0.7s;}
+      @keyframes slideIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+      /* blinking dot */
+      .blink{animation:blink 1.4s step-end infinite;}
+      @keyframes blink{50%{opacity:0;}}
+    </style>
+  </defs>
+
+  <rect width="860" height="90" rx="12" class="bg" stroke="#0C1445" stroke-width="1"/>
+  <text x="430" y="18" class="title">// LET'S CONNECT — AARICA RAJ</text>
+
+  <!-- Email -->
+  <g class="sl sl1">
+    <rect x="18"  y="28" width="142" height="48" rx="8" class="btn b1"/>
+    <text x="89"  y="48" class="btn-icon">📧</text>
+    <text x="89"  y="62" class="btn-txt">Email</text>
+    <text x="89"  y="72" class="btn-sub">aaricaraj890</text>
+  </g>
+
+  <!-- LinkedIn -->
+  <g class="sl sl2">
+    <rect x="172" y="28" width="142" height="48" rx="8" class="btn-hot b2"/>
+    <text x="243" y="48" class="btn-icon">💼</text>
+    <text x="243" y="62" class="btn-txt">LinkedIn</text>
+    <text x="243" y="72" class="btn-sub">aarica-raj</text>
+  </g>
+
+  <!-- GitHub -->
+  <g class="sl sl3">
+    <rect x="326" y="28" width="142" height="48" rx="8" class="btn-hot b3"/>
+    <text x="397" y="48" class="btn-icon">🐙</text>
+    <text x="397" y="62" class="btn-txt">GitHub</text>
+    <text x="397" y="72" class="btn-sub">Aaricacoding</text>
+  </g>
+
+  <!-- HuggingFace -->
+  <g class="sl sl4">
+    <rect x="480" y="28" width="142" height="48" rx="8" class="btn b4"/>
+    <text x="551" y="48" class="btn-icon">🤗</text>
+    <text x="551" y="62" class="btn-txt">HuggingFace</text>
+    <text x="551" y="72" class="btn-sub">Aaricacoding</text>
+  </g>
+
+  <!-- Live Project -->
+  <g class="sl sl5">
+    <rect x="634" y="28" width="208" height="48" rx="8" class="btn-hot b5"/>
+    <circle cx="648" cy="52" r="4" fill="#7C3AED" class="blink"/>
+    <text x="746" y="48" class="btn-icon">🚀</text>
+    <text x="746" y="62" class="btn-txt">Live RAG Project</text>
+    <text x="746" y="72" class="btn-sub">hf.space → aaricacoding</text>
+  </g>
+</svg>

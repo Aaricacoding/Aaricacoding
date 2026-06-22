@@ -1,0 +1,144 @@
+<svg viewBox="0 0 860 340" width="860" height="340" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code', 'Courier New', monospace">
+  <defs>
+    <style>
+      .bg { fill: #020617; }
+      .panel { fill: #0C1445; stroke: #4C0F8F; stroke-width: 1; rx: 8; }
+      .node { fill: #1E1058; stroke: #7C5CBF; stroke-width: 1.2; }
+      .node-hot { fill: #2D1472; stroke: #A78BFA; stroke-width: 1.5; }
+      .label { fill: #DDD6FE; font-size: 11px; font-weight: 600; text-anchor: middle; }
+      .sublabel { fill: #8B7EC8; font-size: 9px; text-anchor: middle; }
+      .title { fill: #F5F3FF; font-size: 13px; font-weight: 700; text-anchor: middle; }
+      .arrow { stroke: #7C5CBF; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-hot { stroke: #C4B5FD; stroke-width: 2; fill: none; marker-end: url(#arrowhead-hot); }
+      .step-num { fill: #4C0F8F; font-size: 9px; font-weight: 700; text-anchor: middle; }
+      .step-circle { fill: #A78BFA; }
+      .section-title { fill: #A78BFA; font-size: 10px; font-weight: 700; text-anchor: middle; letter-spacing: 1px; }
+
+      /* pulse glow on active nodes */
+      @keyframes pulse1 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes pulse2 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes pulse3 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes pulse4 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes pulse5 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes pulse6 { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes flowdash { to { stroke-dashoffset: -24; } }
+      @keyframes flowin { 0%{opacity:0;transform:translateX(-6px)} 100%{opacity:1;transform:translateX(0)} }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+      .n1 { animation: pulse1 2.4s ease-in-out infinite; }
+      .n2 { animation: pulse2 2.4s ease-in-out 0.4s infinite; }
+      .n3 { animation: pulse3 2.4s ease-in-out 0.8s infinite; }
+      .n4 { animation: pulse4 2.4s ease-in-out 1.2s infinite; }
+      .n5 { animation: pulse5 2.4s ease-in-out 1.6s infinite; }
+      .n6 { animation: pulse6 2.4s ease-in-out 2.0s infinite; }
+
+      .flow { stroke-dasharray: 6 4; animation: flowdash 1.2s linear infinite; }
+      .flow2 { stroke-dasharray: 6 4; animation: flowdash 1.2s linear 0.4s infinite; }
+      .flow3 { stroke-dasharray: 6 4; animation: flowdash 1.2s linear 0.8s infinite; }
+      .flow4 { stroke-dasharray: 6 4; animation: flowdash 1.2s linear 1.2s infinite; }
+      .flow5 { stroke-dasharray: 6 4; animation: flowdash 1.2s linear 1.6s infinite; }
+    </style>
+    <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#7C5CBF"/>
+    </marker>
+    <marker id="arrowhead-hot" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#C4B5FD"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="340" rx="12" class="bg"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="860" height="36" rx="12" fill="#0C1445"/>
+  <rect x="0" y="24" width="860" height="12" fill="#0C1445"/>
+  <text x="430" y="23" class="title">⬡  RAG Pipeline — Architectural Flow</text>
+  <!-- traffic lights -->
+  <circle cx="18" cy="18" r="5" fill="#FF5F57"/>
+  <circle cx="34" cy="18" r="5" fill="#FEBC2E"/>
+  <circle cx="50" cy="18" r="5" fill="#28C840"/>
+
+  <!-- ══ LAYER 1: INPUT ══ -->
+  <text x="108" y="58" class="section-title">① INPUT</text>
+  <rect x="28" y="64" width="160" height="52" rx="8" class="node n1"/>
+  <text x="108" y="84" class="label">📄 PDF / Query</text>
+  <text x="108" y="98" class="sublabel">User document upload</text>
+  <text x="108" y="110" class="sublabel">+ natural language query</text>
+
+  <!-- flow arrow 1→2 -->
+  <line x1="188" y1="90" x2="228" y2="90" class="arrow flow"/>
+
+  <!-- ══ LAYER 2: CHUNKING ══ -->
+  <text x="296" y="58" class="section-title">② CHUNKING</text>
+  <rect x="228" y="64" width="136" height="52" rx="8" class="node n2"/>
+  <text x="296" y="82" class="label">✂ Text Splitter</text>
+  <text x="296" y="96" class="sublabel">RecursiveCharacter</text>
+  <text x="296" y="110" class="sublabel">500 chars · 50 overlap</text>
+
+  <!-- flow arrow 2→3 -->
+  <line x1="364" y1="90" x2="404" y2="90" class="arrow flow2"/>
+
+  <!-- ══ LAYER 3: EMBEDDING ══ -->
+  <text x="476" y="58" class="section-title">③ EMBEDDING</text>
+  <rect x="404" y="64" width="144" height="52" rx="8" class="node-hot n3"/>
+  <text x="476" y="82" class="label">🔢 all-MiniLM-L6-v2</text>
+  <text x="476" y="96" class="sublabel">Sentence Transformers</text>
+  <text x="476" y="110" class="sublabel">Semantic vector encoding</text>
+
+  <!-- flow arrow 3→4 -->
+  <line x1="548" y1="90" x2="588" y2="90" class="arrow flow3"/>
+
+  <!-- ══ LAYER 4: VECTOR STORE ══ -->
+  <text x="664" y="58" class="section-title">④ VECTOR DB</text>
+  <rect x="588" y="64" width="152" height="52" rx="8" class="node-hot n4"/>
+  <text x="664" y="82" class="label">🗃 FAISS Index</text>
+  <text x="664" y="96" class="sublabel">Top-k similarity search</text>
+  <text x="664" y="110" class="sublabel">Semantic retrieval</text>
+
+  <!-- ══ RETRIEVAL DOWN ARROW ══ -->
+  <line x1="664" y1="116" x2="664" y2="148" class="arrow-hot flow4"/>
+
+  <!-- ══ LAYER 5: LLM ══ (centre bottom) -->
+  <text x="430" y="162" class="section-title">⑤ LLM INFERENCE</text>
+  <rect x="310" y="168" width="240" height="60" rx="8" class="node-hot n5"/>
+  <text x="430" y="190" class="label">⚡ Groq LLM</text>
+  <text x="430" y="205" class="sublabel">Context-grounded generation</text>
+  <text x="430" y="219" class="sublabel">~0.5s latency · hallucination-reduced</text>
+
+  <!-- retrieval arc from FAISS to LLM -->
+  <path d="M 588 145 Q 540 155 550 168" class="arrow-hot flow4" fill="none"/>
+
+  <!-- query also flows into LLM -->
+  <path d="M 108 116 Q 108 198 310 198" class="arrow flow5" fill="none"/>
+
+  <!-- ══ LAYER 6: OUTPUT ══ -->
+  <text x="430" y="258" class="section-title">⑥ OUTPUT</text>
+  <rect x="310" y="264" width="240" height="52" rx="8" class="node n6"/>
+  <text x="430" y="284" class="label">💬 Grounded Answer</text>
+  <text x="430" y="298" class="sublabel">Flask REST API → Animated HTML/CSS/JS UI</text>
+  <text x="430" y="312" class="sublabel">Deployed · Docker · HuggingFace Spaces</text>
+
+  <line x1="430" y1="228" x2="430" y2="264" class="arrow-hot flow4"/>
+
+  <!-- ══ SIDE STACK: MODEL LAYER ══ -->
+  <rect x="756" y="64" width="88" height="220" rx="8" fill="#0D0B2B" stroke="#4C0F8F" stroke-width="1"/>
+  <text x="800" y="82" class="section-title">STACK</text>
+  <text x="800" y="98" class="sublabel">LangChain</text>
+  <text x="800" y="112" class="sublabel">PyTorch</text>
+  <text x="800" y="126" class="sublabel">Scikit-learn</text>
+  <text x="800" y="140" class="sublabel">HuggingFace</text>
+  <text x="800" y="154" class="sublabel">Flask</text>
+  <text x="800" y="168" class="sublabel">Docker</text>
+  <text x="800" y="182" class="sublabel">Azure AI</text>
+  <text x="800" y="196" class="sublabel">Gradio</text>
+  <text x="800" y="210" class="sublabel">FAISS</text>
+  <text x="800" y="224" class="sublabel">Groq API</text>
+  <text x="800" y="238" class="sublabel">Gemini API</text>
+  <text x="800" y="252" class="sublabel">REST APIs</text>
+  <text x="800" y="266" class="sublabel">Git · GitHub</text>
+
+  <!-- latency badge -->
+  <rect x="28" y="280" width="220" height="36" rx="6" fill="#1E1058" stroke="#A78BFA" stroke-width="1"/>
+  <text x="138" y="296" class="label" style="font-size:10px">⚡ 30s+ baseline → ~0.5s with Groq</text>
+  <text x="138" y="310" class="sublabel">60× latency reduction achieved</text>
+</svg>

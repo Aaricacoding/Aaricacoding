@@ -1,0 +1,56 @@
+<svg viewBox="0 0 860 80" width="860" height="80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;display=swap');
+      .bg { fill: #020617; }
+      .prompt { fill: #4C0F8F; font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 700; }
+      .text { fill: #DDD6FE; font-family: 'Fira Code', monospace; font-size: 13px; }
+      .cursor { fill: #7C3AED; }
+
+      .line1 { animation: reveal1 0s 0.5s both; }
+      .line2 { animation: reveal2 0s 3.5s both; }
+      .line3 { animation: reveal3 0s 6.5s both; }
+
+      @keyframes reveal1 { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes reveal2 { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes reveal3 { from { opacity: 0; } to { opacity: 1; } }
+
+      /* typewriter clip masks per line */
+      .t1 { animation: type1 2.4s steps(42,end) 0.5s both; }
+      .t2 { animation: type2 2.4s steps(46,end) 3.5s both; }
+      .t3 { animation: type3 2.4s steps(44,end) 6.5s both; }
+
+      @keyframes type1 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+      @keyframes type2 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+      @keyframes type3 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+
+      .cur1 { animation: blink 0.8s step-end infinite 0.5s, hidecur1 0s 3.2s forwards; }
+      .cur2 { animation: blink 0.8s step-end infinite 3.5s, hidecur2 0s 6.2s forwards; opacity: 0; animation: show2 0s 3.5s forwards, blink 0.8s step-end infinite 3.5s, hidecur2 0s 6.2s forwards; }
+      .cur3 { opacity: 0; animation: show3 0s 6.5s forwards, blink 0.8s step-end infinite 6.5s; }
+
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes hidecur1 { to { opacity: 0; } }
+      @keyframes hidecur2 { to { opacity: 0; } }
+      @keyframes show2 { to { opacity: 1; } }
+      @keyframes show3 { to { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="860" height="80" rx="10" class="bg"/>
+  <rect x="0" y="0" width="860" height="80" rx="10" fill="#020617" stroke="#1E1058" stroke-width="1"/>
+
+  <!-- line 1 -->
+  <text x="20" y="26" class="prompt">❯ </text>
+  <text x="44" y="26" class="text t1">Building production RAG pipelines with FAISS + LangChain</text>
+  <rect class="cursor cur1" x="528" y="13" width="8" height="16" rx="1"/>
+
+  <!-- line 2 -->
+  <text x="20" y="48" class="prompt">❯ </text>
+  <text x="44" y="48" class="text t2">Fine-tuning DistilRoBERTa → 91.3% emotion accuracy achieved</text>
+  <rect class="cursor cur2" x="556" y="35" width="8" height="16" rx="1"/>
+
+  <!-- line 3 -->
+  <text x="20" y="70" class="prompt">❯ </text>
+  <text x="44" y="70" class="text t3">Deploying multimodal BLIP · 247M params · HuggingFace Spaces_</text>
+  <rect class="cursor cur3" x="572" y="57" width="8" height="16" rx="1"/>
+</svg>

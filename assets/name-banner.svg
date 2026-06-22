@@ -1,0 +1,70 @@
+<svg viewBox="0 0 860 120" width="860" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&amp;display=swap');
+    </style>
+
+    <!-- shimmer gradient moving left to right -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#2d0a4e"/>
+      <stop offset="35%"  stop-color="#4c0f8f"/>
+      <stop offset="50%"  stop-color="#7c3aed"/>
+      <stop offset="65%"  stop-color="#4c0f8f"/>
+      <stop offset="100%" stop-color="#2d0a4e"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+        values="-1 0; 1 0; -1 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- subtle glow filter -->
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- soft drop shadow for depth -->
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#2d0a4e" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="860" height="120" rx="12" fill="#020617" stroke="#1E1058" stroke-width="1"/>
+
+  <!-- decorative rule lines -->
+  <line x1="60" y1="30" x2="300" y2="30" stroke="#2d0a4e" stroke-width="1" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="560" y1="30" x2="800" y2="30" stroke="#2d0a4e" stroke-width="1" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- corner glyphs -->
+  <text x="36" y="36" fill="#4c0f8f" font-family="serif" font-size="14" opacity="0.6">✦</text>
+  <text x="810" y="36" fill="#4c0f8f" font-family="serif" font-size="14" opacity="0.6">✦</text>
+
+  <!-- shadow layer for depth -->
+  <text x="432" y="85"
+    text-anchor="middle"
+    font-family="'Cinzel Decorative', 'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+    font-size="52"
+    font-weight="900"
+    letter-spacing="8"
+    fill="#1a0930"
+    filter="url(#shadow)">Aarica Raj</text>
+
+  <!-- main name — shimmer fill -->
+  <text x="430" y="82"
+    text-anchor="middle"
+    font-family="'Cinzel Decorative', 'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+    font-size="52"
+    font-weight="900"
+    letter-spacing="8"
+    fill="url(#shimmer)"
+    filter="url(#glow)">Aarica Raj</text>
+
+  <!-- decorative rule below -->
+  <line x1="60" y1="105" x2="800" y2="105" stroke="#1E1058" stroke-width="1" opacity="0.5"/>
+</svg>

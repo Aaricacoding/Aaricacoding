@@ -1,0 +1,65 @@
+<svg viewBox="0 0 860 130" width="860" height="130" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code','Courier New',monospace">
+  <defs>
+    <style>
+      .bg{fill:#020617;}
+      .card{fill:#0C1445;stroke:#1E1058;stroke-width:1;}
+      .card-hot{fill:#1E1058;stroke:#7C3AED;stroke-width:1.5;}
+      .val{fill:#DDD6FE;font-size:28px;font-weight:700;text-anchor:middle;}
+      .val-accent{fill:#A78BFA;font-size:16px;font-weight:700;}
+      .lbl{fill:#4C0F8F;font-size:8.5px;letter-spacing:1.5px;text-anchor:middle;text-transform:uppercase;}
+      .sub{fill:#7C3AED;font-size:9px;text-anchor:middle;}
+      .divider{stroke:#1E1058;stroke-width:1;}
+
+      /* count-up animations */
+      @keyframes count4   { 0%{opacity:0} 5%{opacity:1} }
+      @keyframes count91  { 0%{opacity:0} 5%{opacity:1} }
+      @keyframes count60  { 0%{opacity:0} 5%{opacity:1} }
+      @keyframes count247 { 0%{opacity:0} 5%{opacity:1} }
+      @keyframes count1   { 0%{opacity:0} 5%{opacity:1} }
+
+      .s1{opacity:0;animation:count4   0.1s ease 0.3s forwards;}
+      .s2{opacity:0;animation:count91  0.1s ease 0.6s forwards;}
+      .s3{opacity:0;animation:count60  0.1s ease 0.9s forwards;}
+      .s4{opacity:0;animation:count247 0.1s ease 1.2s forwards;}
+      .s5{opacity:0;animation:count1   0.1s ease 1.5s forwards;}
+
+      /* glow pulse on hot cards */
+      @keyframes glow{0%,100%{stroke:#7C3AED;stroke-width:1.5;}50%{stroke:#A78BFA;stroke-width:2.5;}}
+      .glow1{animation:glow 2.5s ease-in-out infinite;}
+      .glow2{animation:glow 2.5s ease-in-out 0.8s infinite;}
+      .glow3{animation:glow 2.5s ease-in-out 1.6s infinite;}
+    </style>
+  </defs>
+
+  <rect width="860" height="130" rx="12" class="bg" stroke="#0C1445" stroke-width="1"/>
+
+  <!-- card 1 -->
+  <rect x="12"  y="12" width="156" height="106" rx="10" class="card-hot glow1"/>
+  <text x="90"  y="58" class="val s1">4</text>
+  <text x="90"  y="78" class="sub s1">Live Projects</text>
+  <text x="90"  y="95" class="lbl s1">DEPLOYED · HF SPACES</text>
+
+  <!-- card 2 -->
+  <rect x="178" y="12" width="156" height="106" rx="10" class="card-hot glow2"/>
+  <text x="256" y="55" class="val s2">91<tspan class="val-accent">.3%</tspan></text>
+  <text x="256" y="75" class="sub s2">Emotion Accuracy</text>
+  <text x="256" y="92" class="lbl s2">DISTILROBERTA FINE-TUNE</text>
+
+  <!-- card 3 -->
+  <rect x="344" y="12" width="156" height="106" rx="10" class="card-hot glow3"/>
+  <text x="422" y="55" class="val s3">60<tspan class="val-accent">×</tspan></text>
+  <text x="422" y="75" class="sub s3">Latency Reduction</text>
+  <text x="422" y="92" class="lbl s3">30S+ → ~0.5S W/ GROQ</text>
+
+  <!-- card 4 -->
+  <rect x="510" y="12" width="156" height="106" rx="10" class="card"/>
+  <text x="588" y="55" class="val s4">247<tspan class="val-accent">M</tspan></text>
+  <text x="588" y="75" class="sub s4">BLIP Parameters</text>
+  <text x="588" y="92" class="lbl s4">MULTIMODAL · VIT + BERT</text>
+
+  <!-- card 5 -->
+  <rect x="676" y="12" width="172" height="106" rx="10" class="card"/>
+  <text x="762" y="55" class="val s5">Azure</text>
+  <text x="762" y="73" class="sub s5">AI Certified</text>
+  <text x="762" y="92" class="lbl s5">MICROSOFT · 2025</text>
+</svg>
